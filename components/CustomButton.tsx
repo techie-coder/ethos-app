@@ -13,9 +13,10 @@ const CustomButton: React.FC<CustomButtonProps> = ({ title, handlePress, contain
     return (
         <TouchableOpacity
             activeOpacity={0.7}
-            onPress={() => { }}
-            className={`bg-lightpink mt-2 rounded-3xl ${containerStyles}`}>
-            <Text className={`justify-center items-center align-middle text-center mt-2 ${textStyles}`}>Continue</Text>
+            onPress={handlePress}
+            className={`${containerStyles}`}
+            disabled={isLoading}>
+            <Text className={`${textStyles}`}>{title}</Text>
         </TouchableOpacity>
     )
 }

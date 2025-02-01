@@ -8,8 +8,12 @@ module.exports = {
       colors: {
         black: '#000000',
         white: '#FFFFFF',
-        lightpink: '#EAC5E8',
-        red: '#FF0000',
+        light_pink: '#EAC5E8',
+        red: '#fc3c44',
+        light_red: '#f94c57',
+        slate: '#c2cad7',
+        grey: '#343433',
+        bright_blue: '#0096ff',
       },
       fontFamily: {
         ibold: ["Inter-Bold", "sans-serif"],
