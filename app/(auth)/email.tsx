@@ -1,4 +1,4 @@
-import { ScrollView, View, Text, Image } from 'react-native'
+import { ScrollView, View, Text, Image, Alert } from 'react-native'
 import React, { useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { StatusBar } from 'expo-status-bar'
@@ -7,11 +7,17 @@ import images from '../../constants/images'
 import CustomButton from '../../components/CustomButton'
 import { router } from 'expo-router'
 
-
-
 const Email = () => {
 
     const [email, setEmail] = useState<string>('')
+
+    const handleEmailSubmission = async (e: string) => {
+        try {
+
+        } catch (err) {
+            console.log(err)
+        }
+    }
 
     return (
         <SafeAreaView className="bg-black h-full">
@@ -36,7 +42,7 @@ const Email = () => {
                         />
                     </View>
                     <CustomButton
-                        handlePress={() => router.push('/otp')}
+                        handlePress={() => handleEmailSubmission(email)}
                         containerStyles="w-[80%] h-[52px] bg-[#f94c57] mt-3 rounded-3xl"
                         textStyles="text-3xl font-iextrabold items-center text-center justify-center mt-3"
                         title="Get OTP" />

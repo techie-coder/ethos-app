@@ -1,6 +1,5 @@
 import { ScrollView, Text, View, Image, TouchableOpacity } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
-
 import images from "../constants/images"
 import CustomButton from '../components/CustomButton'
 import { StatusBar } from 'expo-status-bar'
@@ -10,7 +9,7 @@ const App = () => {
   return (
     <SafeAreaView className="bg-black h-full">
       <ScrollView contentContainerStyle={{ height: '100%' }}>
-        <View className="relative w-full h-[90vh] justify-center items-center px-4">
+        <View className="relative w-full h-[85vh] justify-center items-center px-4">
           <Image
             source={images.cat2}
             className="w-[272px] h-[156px]"

@@ -1,4 +1,4 @@
-import { ScrollView, View, Text, Image } from 'react-native'
+import { ScrollView, View, Text, Image, Alert } from 'react-native'
 import React, { useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { StatusBar } from 'expo-status-bar'
@@ -8,10 +8,17 @@ import CustomButton from '../../components/CustomButton'
 import { Link, router } from 'expo-router'
 
 
-
 const Otp = () => {
 
     const [otp, setOTP] = useState<string>('')
+
+    const submitOTP = async (otp: string) => {
+        try {
+
+        } catch (err) {
+            console.log(err);
+        }
+    }
 
     return (
         <SafeAreaView className="bg-black h-full">
@@ -29,10 +36,11 @@ const Otp = () => {
                             handleChangeText={(e) => setOTP(e)}
                             placeholder='OTP'
                             keyboardType='numeric'
-                            containerStyles='w-full h-16 mt-3 rounded-md justify-center px-4 text-white border-2 border-slate focus:border-red'
+                            containerStyles='w-full h-16 mt-3 rounded-md justify-center px-4 text-white border-2 border-slate focus:border-red flex-row'
                             titleStyles='font-ibold text-white text-2xl'
-                            textInputStyles='text-white'
+                            textInputStyles='flex-1 text-white'
                             title="Enter OTP sent to your email"
+                            type='password'
                         />
                     </View>
                     <CustomButton

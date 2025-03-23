@@ -1,12 +1,12 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-const CustomOtp = () => {
+const Library = () => {
     return (
         <View>
-            <Text>CustomOtp</Text>
+            <Text>Explore</Text>
         </View>
     )
 }
 
-export default CustomOtp
+export default Library

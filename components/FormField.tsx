@@ -1,5 +1,6 @@
-import { View, Text, TextInput, KeyboardTypeOptions } from 'react-native'
+import { View, Text, TextInput, KeyboardTypeOptions, TouchableOpacity, Image } from 'react-native'
 import React, { useState } from 'react'
+import images from "../constants/images"
 
 interface FormFieldProps {
     value?: string,
@@ -30,6 +31,12 @@ const FormField: React.FC<FormFieldProps> = ({ title, value, placeholder, contai
                     keyboardType={keyboardType}
                     secureTextEntry={type === 'password' && !showPassword}
                 />
+
+                {type === 'password' && (
+                    <TouchableOpacity onPress={() => setShowPassword(!showPassword)}>
+                        <Image source={images.eye} className='w-4 h-4 mt-3' resizeMode='contain' />
+                    </TouchableOpacity>
+                )}
             </View>
         </View>
     )

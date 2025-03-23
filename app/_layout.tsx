@@ -1,7 +1,8 @@
-import { SplashScreen, Stack } from 'expo-router'
+import { Redirect, SplashScreen, Stack, useRouter } from 'expo-router'
 import '../global.css'
 import { useFonts } from "expo-font"
 import { useEffect } from 'react';
+
 
 SplashScreen.preventAutoHideAsync();
 
@@ -23,8 +24,9 @@ const RootLayout = () => {
     <Stack>
       <Stack.Screen name="index" options={{ headerShown: false }} />
       <Stack.Screen name="(auth)" options={{ headerShown: false }} />
+      <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
     </Stack>
   )
 }
 
-export default RootLayout
+export default RootLayout;
