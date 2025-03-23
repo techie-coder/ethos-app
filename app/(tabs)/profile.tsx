@@ -1,11 +1,15 @@
 import { View, Text } from 'react-native'
 import React from 'react'
+import { useUser } from '../../hooks/UserContextProvider'
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const Settings = () => {
+    const { user } = useUser();
     return (
-        <View>
+        <SafeAreaView>
             <Text>Profile</Text>
-        </View>
+            <Text>{user}</Text>
+        </SafeAreaView>
     )
 }
 

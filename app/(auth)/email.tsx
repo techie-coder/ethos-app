@@ -6,14 +6,22 @@ import FormField from '../../components/FormField'
 import images from '../../constants/images'
 import CustomButton from '../../components/CustomButton'
 import { router } from 'expo-router'
+import { generateOtp } from '../../lib/login'
+import { useUser } from '../../hooks/UserContextProvider'
 
 const Email = () => {
 
+    const { setUser } = useUser();
     const [email, setEmail] = useState<string>('')
 
-    const handleEmailSubmission = async (e: string) => {
+    const handleEmailSubmission = async (email: string) => {
         try {
-
+            const msg = await generateOtp(email);
+            if (msg.message === "OTP sent successfully") {
+                if (email) await setUser(email)
+                else console.log("no user!")
+                router.push('/otp');
+            }
         } catch (err) {
             console.log(err)
         }
